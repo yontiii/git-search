@@ -99,10 +99,20 @@ nav ul li a:hover::before,nav ul li a:hover::after{
 .content{
     color:black;
     background-color:#F5F5F5;
-    width:300px;
+    width:500px;
+    height:400px;
     padding:10px;
     top:50%;
     left:50%;
     transform: translate(-50%,-50%);
     position: absolute;
+opacity: 0.9;
+}
+#git{
+    text-align: center;
+    font-size:100px;
+    float: right;
+}
+#land{
+    font-size:35px;
 }
