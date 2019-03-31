@@ -39,7 +39,9 @@ export class UsersComponent implements OnInit {
         data.followers, data.following, data.html_url, data.company, data.location, data.bio, data.public_repos)
     })
    
-    
+    interface repoResponse{
+
+    }
       
   }
 
