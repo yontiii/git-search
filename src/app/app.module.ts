@@ -5,7 +5,11 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { UsersComponent } from './users/users.component';
 import { LandingComponent } from './landing/landing.component';
-
+import { RouterModule, Routes } from '@angular/router';
+const routes:Routes=[
+  {path:"search",component:UsersComponent},
+  {path:"home",component:LandingComponent}
+]
 @NgModule({
   declarations: [
     AppComponent,
@@ -15,7 +19,8 @@ import { LandingComponent } from './landing/landing.component';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    RouterModule.forRoot(routes)
   ],
   providers: [],
   bootstrap: [AppComponent]

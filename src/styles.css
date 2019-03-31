@@ -1,2 +1,11 @@
 /* You can add global styles to this file, and also import other style files */
-@import "~bootstrap/dist/css/bootstrap.css"
+body{
+    margin: 0;
+    padding: 0;
+    font-size:18px;
+    box-sizing: border-box;
+    background-image: url('https://images.pexels.com/photos/265658/pexels-photo-265658.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940');
+    background-size: cover;
+   width: 100%;
+    
+}
