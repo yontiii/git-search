@@ -27,8 +27,8 @@ export class UsersComponent implements OnInit {
         public_repos:string,
       }
 
-    this.username="yontiii"
-    this.http.get<profileResponse>("https://api.github.com/users/yontiii?access_token=45da1acab3858d966747dcff67db37fbfcd81bae ").subscribe(data=>{
+    this.username="yontiii";
+    this.http.get<profileResponse>("https://api.github.com/users/" +this.username +"?access_token=45da1acab3858d966747dcff67db37fbfcd81bae ").subscribe(data=>{
       this.profile= new Profile(data.login,data.login,data.avatar_url,
         data.followers,data.following,data.html_url,data.company,data.location,data.bio,data.public_repos)
     })
