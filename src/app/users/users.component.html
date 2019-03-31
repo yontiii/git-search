@@ -1,11 +1,33 @@
-<div class="container">
-  <div class=panel panel-primary>
-    <div class="row">
-      <div>
-
-        
-      </div>
-    </div>
-  </div>
+<div class="panel panel-success">
+<div class="panel-heading">
+    
 </div>
-<a href="{{profile.html_url}}" class="btn btn-primary">View on Github</a>
+<div class="panel-body">
+
+    <div class="row">
+        <div class="col-md-4">
+            <div>
+                <p>{{profile.name}}, <small>({{profile.login}})</small></p> 
+              <img src="{{profile.avatar_url}}" alt="profile image" class="img-circle img responsive">
+            </div>
+  
+        </div>
+        <div class="col-md-4">
+          <div class="list-group">
+            <ul>
+              <li class="list-group-item">Bio <br>{{profile.bio}}</li>
+              <li class="list-group-item"> I am currently  working in {{profile.location}}</li>
+              <li class="list-group-item">I am also a student at {{profile.company}}</li>
+            </ul>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <span class="label label-default">{{profile.followers}} Followers</span>
+        </div>
+      </div>
+</div>
+
+
+
+</div>
+
