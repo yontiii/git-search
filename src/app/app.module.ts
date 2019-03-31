@@ -6,16 +6,19 @@ import { AppComponent } from './app.component';
 import { UsersComponent } from './users/users.component';
 import { LandingComponent } from './landing/landing.component';
 import { RouterModule, Routes } from '@angular/router';
+import { NotFoundComponent } from './not-found/not-found.component';
 const routes:Routes=[
   {path:"search",component:UsersComponent},
   {path:"home",component:LandingComponent},
-  {path:"",redirectTo:"/home",pathMatch:"full"}
+  {path:"",redirectTo:"/home",pathMatch:"full"},
+  {path:'**',component:NotFoundComponent}
 ]
 @NgModule({
   declarations: [
     AppComponent,
     UsersComponent,
-    LandingComponent
+    LandingComponent,
+    NotFoundComponent
   ],
   imports: [
     BrowserModule,
