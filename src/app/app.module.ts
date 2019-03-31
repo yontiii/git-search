@@ -8,7 +8,8 @@ import { LandingComponent } from './landing/landing.component';
 import { RouterModule, Routes } from '@angular/router';
 const routes:Routes=[
   {path:"search",component:UsersComponent},
-  {path:"home",component:LandingComponent}
+  {path:"home",component:LandingComponent},
+  {path:"",redirectTo:"/home",pathMatch:"full"}
 ]
 @NgModule({
   declarations: [

@@ -112,7 +112,11 @@ opacity: 0.9;
     text-align: center;
     font-size:100px;
     float: right;
+    color:#4DD0E1;
 }
 #land{
     font-size:35px;
+}
+.hidden:hover{
+    border-top:2px #0097A7;
 }
