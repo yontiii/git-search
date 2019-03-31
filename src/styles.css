@@ -8,12 +8,15 @@ body{
     background-size: cover;
    width: 100%; 
    overflow-x: hidden;
-  
+  filter: blur();
 }
 #intro{
     font-size:20px;
     text-transform: uppercase;
     color: white;
+}
+.list-group{
+    padding-top: 20px;
 }
 nav{
     padding-top: 10px;
