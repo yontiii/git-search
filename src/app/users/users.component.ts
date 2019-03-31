@@ -51,7 +51,7 @@ export class UsersComponent implements OnInit {
 
     }
 
-    this.http.get<repoResponse>("https://api.github.com/users/" + this.username + "/repos?access_token= ").subscribe(data => {
+    this.http.get<repoResponse>("https://api.github.com/users/" + this.username + "/repos?access_token= bb7092815fa3de2b1cdcae9c5a16c2a1ed24a95d  ").subscribe(data => {
       this.repo = new Repository(data.full_name, data.description, data.html_url)
       console.log(this.repo);
     })

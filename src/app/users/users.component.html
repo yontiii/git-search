@@ -5,14 +5,14 @@
   <div class="panel-body">
 
     <div class="row">
-      <div class="col-md-4">
+      <div class="col-md-6">
         <div>
-          <p>{{profile.name}}, <small>({{profile.login}})</small></p>
+          <p> <small id="intro">{{profile.login}}</small></p>
           <img src="{{profile.avatar_url}}" alt="profile image" class="img-circle img responsive">
         </div>
 
       </div>
-      <div class="col-md-4">
+      <div class="col-md-6">
         <div class="list-group">
           <ul>
             <li class="list-group-item">Bio <br>{{profile.bio}}</li>
@@ -20,14 +20,13 @@
             <li class="list-group-item">I am also a student at {{profile.company}}</li>
           </ul>
         </div>
-      </div>
-      <div class="col-md-4">
         <button class="btn btn-primary">{{profile.followers}} Followers</button>
         <button class="btn btn-danger">Following {{profile.followers}}</button>
         <button class="btn btn-success">{{profile.public_repos}} Public Repos</button>
         <br>
         <a href="{{profile.htm_url}}" class="label label-info">View On Github</a>
       </div>
+    
 
     </div>
   </div>
