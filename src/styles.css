@@ -4,8 +4,105 @@ body{
     padding: 0;
     font-size:18px;
     box-sizing: border-box;
-    background-image: url('https://images.pexels.com/photos/265658/pexels-photo-265658.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940');
+    background-image: url('https://images.pexels.com/photos/163017/data-security-keyboard-computer-163017.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940');
     background-size: cover;
-   width: 100%;
-    
+   width: 100%; 
+   overflow-x: hidden;
+  
+}
+
+nav{
+    padding-top: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    text-transform: uppercase;
+    font-size: 1.6rem;
+}
+
+.brand{
+    font-size: 5rem;
+    text-align: center;
+    transform: translateX(-100rem);
+    animation: slideIn .5s forwards;
+    color:white;
+    letter-spacing: 2px;
+}
+.link{
+    color:white;
+}
+
+#search{
+    color:#03A9F4;
+}
+
+nav ul{
+    display: flex;
+    text-align: left;
+}
+nav ul li{
+    list-style: none;
+    transform: translateX(100rem);
+    animation: slideIn .5s forwards;
+   
+}
+
+nav ul li:nth-child(1){
+    animation-delay:0s;
+}
+nav ul li:nth-child(2){
+    animation-delay:.5s;
+}
+nav ul li:nth-child(3){
+    animation-delay:1s;
+}
+
+nav ul li a {
+    padding: 1rem 0;
+    margin:0 3rem;
+    position: relative;
+    letter-spacing: 2px;  
+    text-decoration: none;
+    color:white;
+}
+nav ul li a:last-child{
+    margin-right: 0;
+}
+nav ul li a::before,nav ul li a::after{
+    content:"";
+    position: absolute;
+    width: 100%;
+    height:2px;
+   
+    transform:scaleX(0);
+    transition: all 0.5s
+}
+nav ul li a::before{
+    top:0;
+    transform-origin: left;
+}
+nav ul li a::after{
+    bottom: 0;
+    transform-origin: right;
+}
+nav ul li a:hover::before,nav ul li a:hover::after{
+    transform: scaleX(1)
+}
+@keyframes slideIn{
+    from{
+
+    }
+    to{
+        transform: translateX(0)
+    }
+}
+.content{
+    color:black;
+    background-color:#F5F5F5;
+    width:300px;
+    padding:10px;
+    top:50%;
+    left:50%;
+    transform: translate(-50%,-50%);
+    position: absolute;
 }
