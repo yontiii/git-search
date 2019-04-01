@@ -8,12 +8,8 @@ import { LandingComponent } from './landing/landing.component';
 import { RouterModule, Routes } from '@angular/router';
 import { FormsModule } from '@angular/forms';
 import { NotFoundComponent } from './not-found/not-found.component';
-const routes:Routes=[
-  {path:"users",component:UsersComponent},
-  {path:"home",component:LandingComponent},
-  {path:"",redirectTo:"home",pathMatch:"full"},
-  {path:'**',component:NotFoundComponent}
-]
+
+import {RoutingModule} from './routing/routing.module'
 @NgModule({
   declarations: [
     AppComponent,
@@ -25,8 +21,9 @@ const routes:Routes=[
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    RouterModule.forRoot(routes),
-    FormsModule
+   RoutingModule,
+    FormsModule,
+    RouterModule
   ],
   providers: [],
   bootstrap: [AppComponent]

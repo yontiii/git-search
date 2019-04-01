@@ -1,22 +1,62 @@
-<div class="container">
-<nav>
-  <h1 class="brand"><span>Git</span>   <span id="search">Search</span></h1>
-  <ul>
-    <li><a  [routerLink]="['/home']" routerLinkActive="router-link-active" class="link" >Home</a> </li>
-    <li><a  [routerLink]="['/users']" routerLinkActive="router-link-active" class="link">Search</a> </li>
-    <li><a href="">About</a> </li>
-  </ul>
-</nav>
+<div class="container-fullwidth">
+  <nav class="navbar navbar-inverse">
+      <div class="container-fluid">
+          <ul class="nav navbar-nav">
+              <li><a routerLink='/home' routerLinkActive="router-link-active" > <i class="far fa-home-lg-alt"></i> Home</a></li>
+              <li><a  routerLink='/users' routerLinkActive="router-link-active" > <i class="far fa-search-plus"></i>Search</a></li>
 
-<div class="content">
-    <i class="fab fa-github" id="git"></i>
-    <p class="clearfix" id="land"><span>Git</span>   <span id="search">Search</span></p>
-<h2>Find Github Members</h2>
-<div class="hidden">
+          </ul>
+      </div>
+  </nav>
+  <!-- <router-outlet></router-outlet> -->
+  <h1>G<i class="fab fa-github"></i>t-Search</h1>
+  <div id="text-carousel" class="carousel slide" data-ride="carousel">
+      <div class="row">
+          <div class="col-xs-offset-3 col-xs-6">
+              <div class="carousel-inner">
+                  <div class="item active">
+                      <div class="carousel-content">
+                          <div>
+                              <p>
+                                "It has become appallingly obvious that our technology has exceeded our humanity."
+                                  <br>
+                                  <span>Albert Einstein</span>
+                              </p>
+                          </div>
+                      </div>
+                  </div>
+                  <div class="item">
+                      <div class="carousel-content">
+                          <div>
+                              <p>
+                                "The world won't care about your self-esteem. The world will expect you to accomplish something BEFORE you feel good about yourself."
+                                  <br>
+                                  <span>Bill Gates</span>
+                              </p>
+                          </div>
+                      </div>
+                  </div>
+                  <div class="item">
+                      <div class="carousel-content">
+                          <div>
+                              <p>
+                                "Fork your repositories wisely"
+                                  <br>
+                                  <span>Someone in Moringa</span>
+                              </p>
+                          </div>
+                      </div>
+                  </div>
 
+              </div>
+          </div>
+      </div>
+      <a class="left carousel-control" href="#text-carousel" data-slide="prev">
+          <span class="glyphicon glyphicon-chevron-left"></span>
+      </a>
+      <a class="right carousel-control" href="#text-carousel" data-slide="next">
+          <span class="glyphicon glyphicon-chevron-right"></span>
+      </a>
+
+  </div>
 </div>
-<h4>Just Click on the search Button to find them </h4>
-<button class="btn btn-info btn-lg " style="text-align:center;" [routerLink]="['/search']" routerLinkActive="router-link-active" >SEARCH MEMBERS</button>
-</div>
-</div>
-<router-outlet></router-outlet>
