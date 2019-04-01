@@ -3,11 +3,11 @@
   <h1 class="brand"><span>Git</span>   <span id="search">Search</span></h1>
   <ul>
     <li><a  [routerLink]="['/home']" routerLinkActive="router-link-active" class="link" >Home</a> </li>
-    <li><a  [routerLink]="['/search']" routerLinkActive="router-link-active" class="link">Search</a> </li>
+    <li><a  [routerLink]="['/users']" routerLinkActive="router-link-active" class="link">Search</a> </li>
     <li><a href="">About</a> </li>
   </ul>
 </nav>
-<router-outlet></router-outlet>
+
 <div class="content">
     <i class="fab fa-github" id="git"></i>
     <p class="clearfix" id="land"><span>Git</span>   <span id="search">Search</span></p>
@@ -19,3 +19,4 @@
 <button class="btn btn-info btn-lg " style="text-align:center;" [routerLink]="['/search']" routerLinkActive="router-link-active" >SEARCH MEMBERS</button>
 </div>
 </div>
+<router-outlet></router-outlet>

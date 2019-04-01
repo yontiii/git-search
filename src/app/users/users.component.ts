@@ -15,46 +15,31 @@ export class UsersComponent implements OnInit {
 
   profile: Profile;
   username: string;
-  repo: Repository;
+   Repository:Repository[];
+
+   loading:boolean=false;
+   errormessage;
+
+  locateUserProfile(){
+    this.profileRequestService.updateProfile(this.username);
+    this.profileRequestService.profileRequest();
+    this.profile=this.profileRequestService.profile
+  }
   
 
   constructor(private http: HttpClient, private profileRequestService: ProfileRequestService) { }
 
+  public findRepos(){
+    this.loading=true;
+    this.errormessage='';
+
+    this.profileRequestService.findRepos(this.username).subscribe((response)=>{this.Repository=response;},
+    (error)=>{this.errormessage=error;this.loading=false;},()=>{this.loading=false;})
+
+  }
   ngOnInit() {
-
-    interface profileResponse {
-      login: string,
-
-      avatar_url: string,
-      followers: string,
-      following: string,
-      html_url: string,
-      company: string,
-      location: string,
-      bio: string,
-      public_repos: string,
-
-    }
-    this.username = 'yontiii';
-
-    this.http.get<profileResponse>("https://api.github.com/users/" + this.username + "?access_token=45da1acab3858d966747dcff67db37fbfcd81bae ").subscribe(data => {
-      this.profile = new Profile(data.login, data.avatar_url,
-        data.followers, data.following, data.html_url, data.company, data.location, data.bio, data.public_repos)
-        console.log(this.profile)
-      })
-
-
-    interface repoResponse {
-      full_name: string,
-      description: string,
-      html_url: string,
-
-    }
-
-    this.http.get<repoResponse>("https://api.github.com/users/" + this.username + "/repos?access_token= bb7092815fa3de2b1cdcae9c5a16c2a1ed24a95d  ").subscribe(data => {
-      this.repo = new Repository(data.full_name, data.description, data.html_url)
-      console.log(this.repo);
-    })
+    this.profileRequestService.profileRequest();
+    this.profile=this.profileRequestService.profile
   }
 
 }

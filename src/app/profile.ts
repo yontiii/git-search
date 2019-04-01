@@ -3,7 +3,7 @@ export class Profile {
         public login:string,
        
         public avatar_url:string,
-       public followers:string,
+        public followers:string,
         public following:string,
         public html_url:string,
         public company:string,

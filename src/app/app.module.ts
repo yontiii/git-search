@@ -6,11 +6,12 @@ import { AppComponent } from './app.component';
 import { UsersComponent } from './users/users.component';
 import { LandingComponent } from './landing/landing.component';
 import { RouterModule, Routes } from '@angular/router';
+import { FormsModule } from '@angular/forms';
 import { NotFoundComponent } from './not-found/not-found.component';
 const routes:Routes=[
-  {path:"search",component:UsersComponent},
+  {path:"users",component:UsersComponent},
   {path:"home",component:LandingComponent},
-  {path:"",redirectTo:"/home",pathMatch:"full"},
+  {path:"",redirectTo:"home",pathMatch:"full"},
   {path:'**',component:NotFoundComponent}
 ]
 @NgModule({
@@ -24,7 +25,8 @@ const routes:Routes=[
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    RouterModule.forRoot(routes)
+    RouterModule.forRoot(routes),
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
