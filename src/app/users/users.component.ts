@@ -32,6 +32,7 @@ export class UsersComponent implements OnInit {
   public findRepos(){
     this.loading=true;
     this.errormessage='';
+    
 
     this.profileRequestService.findRepos(this.username).subscribe((response)=>{this.Repository=response;},
     (error)=>{this.errormessage=error;this.loading=false;},()=>{this.loading=false;})

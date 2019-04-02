@@ -3,8 +3,8 @@ body{
     margin: 0;
     padding: 0;
     font-size:18px;
-  
-    background-image: url('https://images.pexels.com/photos/163017/data-security-keyboard-computer-163017.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940');
+  opacity:3.5;
+    background-color: #FAFAFA;
     background-size: cover;
    width: 100%; 
    overflow-x: hidden;
@@ -19,13 +19,23 @@ body{
     padding-top: 20px;
     margin-right: 60px;
 }
+
+#title{
+    font-size: 20px;
+    color:#03A9F4;
+}
 nav{
-    padding-top: 10px;
+  
     display: flex;
     justify-content: space-between;
     align-items: center;
     text-transform: uppercase;
     font-size: 1.6rem;
+}
+
+    #photo{
+    width:400px;
+    height:200px;
 }
 
 .brand{
@@ -45,14 +55,23 @@ nav{
 }
 
 nav ul{
-    display: flex;
-    text-align: left;
+     
+        margin: 150px auto 0; 
+        padding: 0; 
+        list-style: none; 
+        display: table;
+        width: 600px;
+        text-align: center;
+      
 }
 nav ul li{
     list-style: none;
     transform: translateX(100rem);
     animation: slideIn .5s forwards;
-   
+    display: table-cell; 
+    position: relative; 
+    padding: 15px 0;
+    color: blue;
 }
 
 nav ul li:nth-child(1){
@@ -64,23 +83,100 @@ nav ul li:nth-child(2){
 nav ul li:nth-child(3){
     animation-delay:1s;
 }
+.effect-box{
+   color:#26C6DA;
+   font-size:100px; 
+   text-align:center;
+}
+
 
 nav ul li a {
-    padding: 1rem 0;
+    
     margin:0 3rem;
     position: relative;
     letter-spacing: 2px;  
     text-decoration: none;
-    color:white;
+    color:#26C6DA;
+    text-transform: uppercase;
+    text-decoration: none;
+    letter-spacing: 0.15em;
+    
+    display: inline-block;
+    padding: 15px 20px;
+    position: relative;
 }
+
+h2{
+    margin:0 0 10px;
+    padding: 0;
+    color:#26C6DA;
+    font-size: 24px;
+}
+.box{
+    text-align: center;
+   width:500px;
+}
+
+input{
+    display: inline-block;
+    font-size: 20px;
+    box-sizing: border-box;
+    transition: .5s;
+}
+
+input[type="text"]{
+    background:#fff;
+    width:350px;
+    height: 50px;
+    border:none;
+    outline:none;
+    padding: 0 25px;
+    border-radius:25px 0 0 25px;
+  
+    
+}
+
+input[type="submit"]{
+    position: relative;
+    border-radius:0 25px 25px 0;
+    width:140px;
+    height: 50px;
+    border:none;
+    outline:none;
+    background:#26C6DA;
+    color:#fff;
+}
+input[type="submit"]:hover{
+    color:#80D8FF;
+    text-transform: uppercase;
+}
+a:after {    
+    background: none repeat scroll 0 0 transparent;
+    bottom: 0;
+    content: "";
+    display: block;
+    height: 2px;
+    left: 50%;
+    position: absolute;
+    background: #26C6DA;
+    transition: width 0.3s ease 0s, left 0.3s ease 0s;
+    width: 0;
+  }
+  a:hover:after { 
+    width: 100%; 
+    left: 0; 
+  }
+  @media screen and (max-height: 300px) {
+      ul {
+          margin-top: 40px;
+      }
+  }
+  
 nav ul li a:last-child{
     margin-right: 0;
 }
 nav ul li a::before,nav ul li a::after{
-    content:"";
-    position: absolute;
-    width: 100%;
-    height:2px;
+  
    
     transform:scaleX(0);
     transition: all 0.5s
@@ -127,4 +223,23 @@ opacity: 0.9;
 }
 .hidden:hover{
     border-top:2px #0097A7;
+}
+
+.write{
+    border-left:2px #0097A7;
+    border-radius:40px;
+    font-size:40px;
+    color:black;
+    background: rgba(255, 255,255);
+    padding:40px;
+    padding-right: 20px;
+   border-top:2px solid#0097A7;
+    opacity:0.9;
+    height:250px;
+    width:850px;
+    font-family: 'Tangerine', cursive;
+}
+.about{
+    color:#03A9F4;
+    font-weight: 700
 }

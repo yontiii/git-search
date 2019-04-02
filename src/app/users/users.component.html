@@ -1,4 +1,72 @@
-<div class="panel panel-success">
+<nav class="navbar navbar-inverse">
+    <div class="container-fluid">
+        <h1 class="effect-box" >G<i class="fab fa-github"></i>t-Search</h1>
+        <ul class="nav navbar-nav">
+            <li><a routerLink='/home' routerLinkActive="router-link-active" > <i class="far fa-home-lg-alt"></i> Home</a></li>
+            <li><a  routerLink='/users' routerLinkActive="router-link-active" > <i class="far fa-search-plus"></i>Search</a></li>
+
+        </ul>
+    </div>
+</nav>
+
+<div class="container-fluid">
+  <div class="box">
+    <h2>Find User</h2>
+    <form >
+      <input type="text" placeholder="Type.." name="username" [(ngModel)]="username">
+      <input type="submit" value="search"  (click)='locateUserProfile()'>
+    </form>
+  </div>
+  <br>
+  <div class="row">
+      <div class="col-md-6">
+          <img src="{{profile.avatar_url}}" alt="profile image">
+      </div>
+      <div class="col-md-6">
+        <div class="panel panel-primary">
+          <div class="panel-heading">
+              <h3 style="text-align:center"> <i class="fas fa-business-time" style="margin-right:5px"></i>User Information</h3>
+          </div>
+          <div class="panel-body">
+            <ul class="list-group list-group-flush">
+              <li class="list-group-item"><i class="fas fa-user-tag"></i> User Name : {{profile.login}}</li> 
+              <li class="list-group-item"><i class="fas fa-envelope"></i> Email : {{profile.email}}</li> 
+              <li class="list-group-item"><i class="far fa-map-marker-check"></i> Location :{{profile.location}}</li> 
+              <li class="list-group-item"> <label for="" class="label label-primary">{{profile.followers}} Followers</label> </li> 
+              <li class="list-group-item"> <label for="" class="label label-info"> Following {{profile.following}} </label> </li> 
+              <li class="list-group-item"> <label for="" class="label label-danger">{{profile.public_repos}} Public Repos</label> </li> 
+            </ul>
+            <button type="button" (click)="findRepos()" class="btn btn-danger">VIEW REPOS</button>
+            <a href="{{profile.html_url}}" class="btn btn-info" target="_blank">View Github Profile</a>
+            <div *ngIf="loading">
+                <div class="spinner-border text-primary" role="status">
+                    <span class="sr-only">Loading...</span>
+                  </div>
+            </div>
+          </div>
+        </div>
+      </div>
+  </div>
+ 
+  <div class="row">
+     
+    <div class="col-md-4" *ngFor="let repository of Repository">
+      <div class="card">
+        <img  id ="photo" src="https://enlivenhq.com/wp-content/uploads/2014/08/github-banner-770x425.png" alt="" class="card-img-top">
+
+        <div class="card-body">
+
+            <h5 id="title">{{repository.name}}</h5> <br>
+            <p>{{repository.description}}</p>
+            <a href="{{repository.html_url}}">View on Github</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- <div class="panel panel-success">
+
   <div class="panel-heading">
 
       <div class="form-group">
@@ -7,9 +75,9 @@
       </div>
 
  
-<!-- <div class="form-group">
+<div class="form-group">
      <button type="button" (click)="locateUserProfile()">Get Repos</button>
-</div> -->
+</div>
 
   </div>
   <div class="panel-body">
@@ -42,7 +110,7 @@
   </div>
 </div>
 
-<!-- 
+
 <div class="panel panel-primary">
   <div class="panel-heading">
     REPOS
@@ -51,12 +119,12 @@
     {{repo.full_name}} <br> {{repo.description}}, <br> {{repo.htm_url}}
   </div>
 
-</div> -->
+</div>
 <div class="form-group">
-  <button type="button" (click)="findRepos()">Get Repos</button>
+  
 </div>
 
-<div *ngIf="loading">loading...</div>
+
 
 <div *ngIf="errorMessage" class="alert alert-warning">
   <strong>Warning!</strong> {{errorMessage}}
@@ -69,5 +137,5 @@
     description:{{repository.html_url}}
   </div>
 </div>
-<pre>{{repos | json}}</pre>
+<pre>{{repos | json}}</pre> -->
 

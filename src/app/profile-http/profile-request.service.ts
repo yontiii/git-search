@@ -28,9 +28,9 @@ export class ProfileRequestService {
       followers: string,
       following: string,
       html_url: string,
-      company: string,
       location: string,
-      bio: string,
+      name: string,
+      email: string,
       public_repos: string,
 
     }
@@ -42,9 +42,9 @@ export class ProfileRequestService {
         this.profile.followers=response.followers
         this.profile.following=response.following
         this.profile.html_url=response.html_url
-        this.profile.company=response.company
+        this.profile.email=response.email
         this.profile.location=response.location
-        this.profile.bio=response.bio
+        this.profile.name=response.name
         this.profile.public_repos=response.public_repos
         resolve();
 
